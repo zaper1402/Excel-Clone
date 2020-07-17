@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>My custom Excel</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    
+    <body> 
+        <div id = "container">
+            <div id = "bookHeading">Excel</div>
+            <div id = "menu-bar">
+                <div id ="file-Menu" data-content ="file-menu-container">File</div>
+                <div id="home-Menu"  data-content ="home-menu-container">Home</div>
+                <div id="data-Menu"  data-content ="data-menu-container">Data</div>
+                <div>View</div>
+                <div>Help</div>
+                
+
+            </div>
+            <div id = "menu-content-container">
+                <div class="menu-container" id="file-menu-container">
+                    <div id="new">
+                        <img src="icons\add.png" alt="New" height="30px" width="30px">
+                        <figcaption  class="icon-caption">New</figcaption>
+                    </div>
+                    <div id ="open">
+                        <img src="icons\folder.png" alt="New" height="30px" width="30px">
+                        <figcaption class="icon-caption">Open</figcaption>
+                    </div>
+                    <div id="save">
+                        <img src="icons\save.png" alt="New" height="30px" width="30px">
+                        <figcaption  class="icon-caption">Save</figcaption>
+                    </div>
+                </div>
+                <div class="menu-container" id="home-menu-container">
+                    <div class ="menu-group" id ="font-menu-container">
+                        <div class = "menu-row">
+                            <select id="font-family-dd">
+                                <option value="Georgia">Georgia</option>
+                                <option value="Aria">Aria</option>
+                                <option value="Impact">Impact</option>
+                                <option value="Tahoma">Tahoma</option>
+                            </select>
+                            <select id="font-size-dd">
+                                <option value="8">8</option>
+                                <option value="10">10</option>
+                                <option value="12">12</option>
+                                <option value="14">14</option>
+                            </select>
+                        </div>
+                        <div class = "menu-row">
+                            <input id ="bold" type="button" value="B">
+                            <input id ="italics" type="button" value="I">
+                            <input id ="underline" type="button" value="U">
+                            <input id ="bg-color" type="color" value="#FFFFFF">
+                            <input id ="txt-color" type="color" value="#000000">
+
+                        </div>
+                    </div>
+                    <div class ="menu-group" id ="alignment-menu-container">
+                        <div class = "menu-row">
+                            <input id='top-align' type='button' prop-val='left' class='valign' value="T">
+                            <input id='middle-align' type='button' prop-val='middle' class='valign' value="M">
+                            <input id='bottom-align' type='button' prop-val='bottom' class='valign' value="B">
+                        </div>
+                        <div class = "menu-row">
+                            <input id='top-align' type='button' prop-val='left' class='halign' value="L">
+                            <input id='center-align' type='button' prop-val='center' class='halign' value="C">
+                            <input id='right-align' type='button' prop-val='right' class='halign' value="R">
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-container" id="data-menu-container">Data</div>
+                
+            </div>
+            <div id = "formula-bar">
+                <input id="cellFormula" type="text"></input> 
+                <div id= "seperator"> fx </div>
+                <input id ="formulaTxt" type="text"></input>
+            </div>
+            <div id = "content-box">
+               <div id = "tl-cell"></div>
+               <div id = "first-row">
+                    <% for(let j=0;j < columns;j++) { %>
+                        <div class = "cell"><%= String.fromCharCode('A'.charCodeAt(0) + (j)) %> </div>
+                    <% } %>
+               </div>
+               <div id = "first-col">
+                    <% for(let i=1;i<= rows;i++) { %>
+                        <div  class = "cell"><%= i %></div>
+                    <% } %>
+               </div>
+               <div id = "grid">
+                    <% for(let i=1;i<= rows;i++) { %>
+                        <div class="row">
+                            <% for(let j=0;j < columns;j++) { %>
+                                <div class = "cell" contenteditable="true" rid="<%= i%>" cid="<%= j%>" > </div>
+                            <% } %>    
+                        </div>
+                    <% } %>    
+               </div>
+            </div>
+            <div id = "sheets-bar">
+               <div>Sheet 1</div>
+               <div id="add">+</div>
+            </div>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>

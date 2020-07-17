@@ -1,0 +1,220 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Noto Sans", sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+    outline: none;
+}
+
+#bookHeading{
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    flex-direction : column;
+    height: 100vh;
+    width: 100vw;
+}
+
+#menu-bar , #formula-bar, #sheets-bar{
+    display: flex;
+    flex-direction : row;
+    height: 24px;
+    
+}
+
+#menu-bar > div{
+    padding: 2px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#menu-bar > div:hover, #menu-bar > div.selected {
+    border-top: 1px solid blue;
+}
+
+#menu-content-container {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+}
+
+.menu-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-group{
+    display: flex;
+    flex-direction: column;
+    border-right: 0.5px solid lightgray;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+.menu-row{
+    display: flex;
+    flex-direction: row;
+    margin: 2px;
+}
+
+.menu-row > *{
+    margin: 0px 5px;
+    border : 0.5px solid lightgray;
+    cursor: pointer;
+    border-radius: 2px;
+    height: 21px;
+}
+
+.menu-row > input{
+    width : 25px;
+}
+
+.menu-row > input:hover{
+    transform: scale(1.2);
+}
+
+#font-family-dd{
+    width: 95px;
+    font-size: 12px;
+}
+
+#font-size-dd{
+    width: 60px;
+    font-size: 12px;
+}
+
+#bold.selected, #Italics.selected, #Underline.selected,#alignment-menu-container input.selected{
+    background-color: teal;
+    color: white;
+}
+
+#formula-bar > #cellFormula {
+    flex : 3%;
+}
+
+#formula-bar > #seperator {
+    flex : 1%;
+    text-align: center;
+    background-color: gray;
+}
+
+#formula-bar > #formulaTxt {
+   flex : 96%;
+    text-align: left;
+}
+
+#sheet-bar {
+    position: relative;
+    width:100%;
+}
+
+#sheets-bar > div{
+    padding: 2px;
+    text-align: center;
+    /* font-weight: bold; */
+    font-size: 14px;
+    cursor: pointer;
+    margin : 2px;      
+}
+
+
+#sheets-bar > #add{
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+#sheets-bar > div:hover {
+    border: 1px solid gray;
+    
+    font-weight: bold;
+    border-bottom: 1px solid blue;
+}
+
+#content-box{
+    position: relative;
+    height: 100vh;
+    overflow: auto;
+}
+
+#tl-cell {
+    position: absolute;
+    top: 0px;
+    left : 0px;
+    width: 25px;
+    height: 25px;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    background-color: lightgray;
+    z-index: 3;
+}
+
+#first-row{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 25px;
+    height: 25px;
+    background-color: lightgray;
+    font-weight: bold;
+    line-height: 25px;
+    z-index: 1;
+}
+
+#first-row > .cell {
+    width: 74px;
+    text-align: center;
+    border-collapse: collapse;
+    border: 0.5px solid white;
+    margin: 0px;
+    padding: 0px;
+} 
+
+#first-col {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 25px;
+    width: 25px;
+    background-color: lightgray;
+    font-weight: bold;
+    line-height: 25px;
+    z-index: 2;
+}
+
+#first-col> .cell{
+    height : 25px;
+    text-align: center;
+    border-collapse: collapse;
+    border: 0.5px solid white;
+}
+
+#grid{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 25px;
+    left: 25px;
+}
+
+#grid > .row{
+    display: flex;
+    flex-direction: row;
+    height: 25px;
+}
+
+#grid .cell {
+    width: 74px;
+    box-sizing: border-box;
+    border: 0.5px solid gray;
+    line-height: 25px;
+    border-radius: 2px;
+}
+
+#grid .cell.selected{
+    border: 1px solid blue;
+}
