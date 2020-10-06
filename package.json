@@ -16,6 +16,6 @@
     "save-dev": "0.0.1-security"
   },
   "devDependencies": {
-    "electron": "^9.0.4"
+    "electron": "^9.3.1"
   }
 }
